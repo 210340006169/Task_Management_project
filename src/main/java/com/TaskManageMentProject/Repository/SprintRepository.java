@@ -15,7 +15,7 @@ import com.TaskManageMentProject.Enum.SprintState;
 public interface SprintRepository extends JpaRepository<Sprint,Long> {
 	
 	Optional<Issue>findByIssueKey(String issueKey);
-	Issue findByAssigneeEmail(String assigneeEmail);
+
 	Issue findBySprintId(Long sprintId);
 	Issue findByIssueStatus(IssueStatus issueStatus);
 	List<Sprint> findByProjectId(Long projectId);
