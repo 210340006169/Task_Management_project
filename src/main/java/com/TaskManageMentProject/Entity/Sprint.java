@@ -1,6 +1,7 @@
 package com.TaskManageMentProject.Entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.TaskManageMentProject.Enum.SprintState;
 
@@ -20,6 +21,8 @@ public class Sprint {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@OneToMany(mappedBy = "sprint")
+    private List<Issue> issues;
 	
 	private String sprintName;
 	private LocalDateTime startDate;
@@ -85,6 +88,15 @@ public class Sprint {
 
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
+		
+	}
+
+	public List<Issue> getIssues() {
+		return issues;
+	}
+
+	public void setIssues(List<Issue> issues) {
+		this.issues = issues;
 	}
 	
 	
