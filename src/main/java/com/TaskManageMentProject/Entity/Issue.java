@@ -38,6 +38,8 @@ public class Issue {
 
     @Enumerated(EnumType.STRING)
     private IssueStatus status;
+    @ManyToOne
+    private Sprint sprint;
 
     private String assigneeEmail;
     private String repoterEmail;
@@ -198,5 +200,14 @@ public class Issue {
 	public void setProjectId(Long projectId) {
 		this.projectId = projectId;
 	}
+
+	public Sprint getSprint() {
+		return sprint;
+	}
+
+	public void setSprint(Sprint sprint) {
+		this.sprint = sprint;
+	}
+	
     
 }
